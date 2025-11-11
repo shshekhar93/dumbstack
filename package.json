@@ -1,0 +1,20 @@
+{
+  "name": "dumbstack",
+  "version": "1.0.0",
+  "description": "Quickly bootstrap full dumbware suite",
+  "homepage": "https://github.com/shshekhar93/dumbstack#readme",
+  "bugs": {
+    "url": "https://github.com/shshekhar93/dumbstack/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shshekhar93/dumbstack.git"
+  },
+  "license": "MIT",
+  "author": "Shashi Shekhar <shshekhar93@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
