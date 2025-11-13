@@ -1,22 +1,19 @@
 #!/bin/bash
 echo "Starting dumb suite"
-declare -A APPS=(
-  [DumbPad]='4000'
-  [DumbDrop]='4001'
-  [DumbBudget]='4002'
-  [DumbTerm]='4003'
-  [DumbDo]='4004'
-  [DumbAssets]='4005'
-  [DumbKan]='4006'
-  [DumbWhoIs]='4007'
-)
-for app in ${!APPS[@]}; do
-  export PORT="${APPS[$app]}"
-  cd ~/dumb-suite/$app
 
-  echo "Starting $app on port $PORT";
-  pm2 start --name="$app" npm -- start
-done
+cd ~/dumb-suite/
+pm2 start ecosystem.config.js
 
-nginx;
+# Nginx stuff
+if [ -f /etc/nginx/http.d/default.conf ]; then
+    rm /etc/nginx/http.d/default.conf # Remove default config file
+fi
+
+if [ -z "$DUMBSTACK_DOMAIN" ]; then
+  echo "DUMBSTACK_DOMAIN is not set. Using localhost as default."
+else
+  sed -i "s/server_name _;/server_name $DUMBSTACK_DOMAIN;/g" /etc/nginx/http.d/dumbstack.conf
+fi
+
+nginx
 /bin/bash

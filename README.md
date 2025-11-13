@@ -5,9 +5,9 @@ Note: You're likely better off using the 'official' docker compose, if you're 
 ## Features
 - [X] Install and start all apps
 - [X] Nginx config to proxy various apps
-- [ ] Start apps using ecosystem.config.js
+- [X] Start apps using ecosystem.config.js
+- [X] Runtime configuration of the server domain / url, instead of build time
 - [ ] Allow selecting which apps to start
-- [ ] Runtime configuration of the server domain / url, instead of build time
 - [ ] Home page for selecting apps
 - [ ] Bring some consistency to various apps.
 - [ ] Build and integrate DumBaas - A backend as service built using same princliples of JSON based storage

@@ -13,8 +13,6 @@ declare -A APPS=(
 )
 
 # Clone & setup all repos
-mkdir -p ~/dumb-suite
-
 for app in ${!APPS[@]}; do
   cd ~/dumb-suite
   echo "Cloning ${APPS[$app]} in ~/dumb-suite/$app"
