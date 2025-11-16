@@ -7,6 +7,7 @@ Note: You're likely better off using the 'official' docker compose, if you're 
 - [X] Nginx config to proxy various apps
 - [X] Start apps using ecosystem.config.js
 - [X] Runtime configuration of the server domain / url, instead of build time
+- [X] Add volumes corresponding to each app
 - [ ] Allow selecting which apps to start
 - [ ] Home page for selecting apps
 - [ ] Bring some consistency to various apps.

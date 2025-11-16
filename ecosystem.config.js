@@ -1,6 +1,34 @@
-const AllApps = [
-  'DumbPad', 'DumbDrop', 'DumbBudget', 'DumbTerm', 'DumbDo', 'DumbAssets', 'DumbKan', 'DumbWhois'
-];
+const { genericSetup } = require('./utils.js');
+
+const STATIC_APP_ENV = {
+  DumbPad: {
+    PORT: 4000,
+  },
+  DumbDrop: {
+    PORT: 4001,
+    UPLOAD_DIR: '/uploads/DumbDrop'
+  },
+  DumbBudget: {
+    PORT: 4002,
+  },
+  DumbTerm: {
+    PORT: 4003,
+  },
+  DumbDo: {
+    PORT: 4004,
+  },
+  DumbAssets: {
+    PORT: 4005,
+  },
+  DumbKan: {
+    PORT: 4006,
+  },
+  DumbWhois: {
+    PORT: 4007,
+  },
+};
+
+const AllApps = Object.keys(STATIC_APP_ENV);
 
 function appNameToConfigs(appNames) {
   const envMap = generateEnvVariables(appNames);
@@ -12,16 +40,24 @@ function appNameToConfigs(appNames) {
   }));
 }
 
+const STATIC_SHARED_ENV = {
+  TRUST_PROXY: 'true',
+  TRUSTED_PROXY_IPS: 'loopback',
+}
+
+
 const envPrefix = new RegExp(`^DUMB(${AllApps.map(app => app.replace('Dumb', '').toUpperCase()).join('|')})_(.+)$`);
-const FIRST_PORT = 4000;
 
 function generateEnvVariables(appNames) {
   const envVariablesMap = appNames.reduce((acc, appName, i) => {
-    acc[appName] = {
-      PORT: FIRST_PORT + i,
+    return {
+      ...acc,
+      [appName]: {
+        ...acc[appName],
+        ...STATIC_SHARED_ENV,
+      },
     };
-    return acc;
-  }, {});
+  }, STATIC_APP_ENV);
 
   Object.keys(process.env).forEach(key => {
     const match = key.match(envPrefix);
@@ -39,6 +75,8 @@ function generateEnvVariables(appNames) {
   });
   return envVariablesMap; 
 }
+
+genericSetup().catch(console.error);
 
 module.exports = {
   apps : appNameToConfigs(AllApps),
