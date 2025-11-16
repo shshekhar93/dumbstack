@@ -15,5 +15,4 @@ else
   sed -i "s/server_name _;/server_name $DUMBSTACK_DOMAIN;/g" /etc/nginx/http.d/dumbstack.conf
 fi
 
-nginx
-/bin/bash
+nginx -g 'daemon off;'
