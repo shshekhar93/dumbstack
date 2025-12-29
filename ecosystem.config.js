@@ -26,6 +26,9 @@ const STATIC_APP_ENV = {
   DumbWhois: {
     PORT: 4007,
   },
+  DumbShowCase: {
+    PORT: 4008,
+  },
 };
 
 const AllApps = Object.keys(STATIC_APP_ENV);

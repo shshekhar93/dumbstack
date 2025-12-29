@@ -6,7 +6,17 @@ function ensureDirExists(path) {
   }
 }
 
-const AllApps = [ 'DumbPad', 'DumbDrop', 'DumbBudget', 'DumbTerm', 'DumbDo', 'DumbAssets', 'DumbKan', 'DumbWhois' ];
+const AllApps = [ 
+  'DumbPad', 
+  'DumbDrop', 
+  'DumbBudget', 
+  'DumbTerm', 
+  'DumbDo', 
+  'DumbAssets', 
+  'DumbKan', 
+  'DumbWhois', 
+  'DumbShowCase' 
+];
 
 async function genericSetup() {
   // Any generic setup can be done here

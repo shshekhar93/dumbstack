@@ -10,14 +10,19 @@ declare -A APPS=(
   [DumbAssets]='https://github.com/DumbWareio/DumbAssets'
   [DumbKan]='https://github.com/DumbWareio/DumbKan'
   [DumbWhoIs]='https://github.com/DumbWareio/DumbWhoIs'
+  [DumbShowCase]='./DumbShowCase'
 )
 
 # Clone & setup all repos
 for app in ${!APPS[@]}; do
   cd ~/dumb-suite
-  echo "Cloning ${APPS[$app]} in ~/dumb-suite/$app"
-  mkdir -p $app
-  git clone ${APPS[$app]} $app
+  echo "Setting up $app with ${APPS[$app]}"
+
+  if [[ "${APPS[$app]}" == https* ]] || [[ "${APPS[$app]}" == git* ]]; then
+    echo "Cloning ${APPS[$app]} in ~/dumb-suite/$app"
+    mkdir -p $app
+    git clone ${APPS[$app]} $app
+  fi
 
   cd $app
   npm i;
