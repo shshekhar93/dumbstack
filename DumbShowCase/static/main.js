@@ -38,7 +38,13 @@ async function populateShowcase() {
         }));
       }
       if(itemData.link) {
-        const linkElem = createElement('a', 'showcase-button', 'Go to site', {href: itemData.link, target: '_blank'});
+        const attrs = {
+          href: itemData.link,
+        };
+        if(itemData.link.startsWith('http')) {
+          attrs.target = '_blank';
+        }
+        const linkElem = createElement('a', 'showcase-button', 'Go to site', attrs);
         itemElement.appendChild(linkElem);
       }
       container.appendChild(itemElement);

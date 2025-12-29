@@ -1,17 +1,35 @@
 {
-  "title": "Default showcase title",
+  "title": "Dumb suite",
   "items": [
     {
-      "heading": "Site One",
-      "description": "A minimal showcase for DumbStack projects.",
-      "image": "https://picsum.photos/200?img=1",
-      "link": "https://example.com/site1"
+      "heading": "Dumb Pad",
+      "description": "Notepad in your browser.",
+      "link": "/pad/"
     },
     {
-      "heading": "Site Two",
-      "description": "A simple full-stack web framework.",
-      "image": "https://picsum.photos/200?img=2",
-      "link": "https://example.com/site2"
+      "heading": "Dumb Drop",
+      "description": "File sharing made easy, just drop and share.",
+      "link": "/drop/"
+    },
+    {
+      "heading": "Dumb Budget",
+      "description": "Personal budgeting tool to manage your finances.",
+      "link": "/budget/"
+    },
+    {
+      "heading": "Dumb Assets",
+      "description": "Asset management system for tracking your resources.",
+      "link": "/assets/"
+    },
+    {
+      "heading": "Dumb Todo",
+      "description": "Task management application to organize your to-dos.",
+      "link": "/todo/"
+    },
+    {
+      "heading": "Dumb Kanban",
+      "description": "Kanban board for visual project management.",
+      "link": "/kanban/"
     }
   ]
 }
