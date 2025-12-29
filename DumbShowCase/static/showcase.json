@@ -1,0 +1,17 @@
+{
+  "title": "Default showcase title",
+  "items": [
+    {
+      "heading": "Site One",
+      "description": "A minimal showcase for DumbStack projects.",
+      "image": "https://picsum.photos/200?img=1",
+      "link": "https://example.com/site1"
+    },
+    {
+      "heading": "Site Two",
+      "description": "A simple full-stack web framework.",
+      "image": "https://picsum.photos/200?img=2",
+      "link": "https://example.com/site2"
+    }
+  ]
+}
