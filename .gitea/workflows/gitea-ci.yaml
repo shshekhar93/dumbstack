@@ -2,7 +2,7 @@
 # gitea/gitea-ci.yaml
 #
 name: Build, test & Publish
-run-name: nvrview build for ${{gitea.sha}}
+run-name: dumbsuite build for ${{gitea.sha}}
 on: [push]
 
 jobs:
